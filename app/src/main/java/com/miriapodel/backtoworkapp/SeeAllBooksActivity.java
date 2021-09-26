@@ -1,11 +1,13 @@
 package com.miriapodel.backtoworkapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,7 @@ public class SeeAllBooksActivity extends AppCompatActivity {
 
         adapter = new SeeAllBooksAdapter(this, "allBooks");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter.setBookList(Utils.getInstance().getAllBooks());
 
@@ -38,4 +41,11 @@ public class SeeAllBooksActivity extends AppCompatActivity {
         allBooksList.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        onBackPressed();
+
+        return super.onOptionsItemSelected(item);
+    }
 }

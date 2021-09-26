@@ -13,25 +13,32 @@
         android:theme="@style/Theme.BackToWorkApp">
         <activity
             android:name=".WebView"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/about"/>
         <activity
             android:name=".addToFavoritesActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/favorites"/>
         <activity
             android:name=".alreadyReadBooksActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/already_read"/>
         <activity
             android:name=".wantToReadActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/wishlist"/>
         <activity
             android:name=".CurrentlyReadingActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/currently_reading"/>
         <activity
             android:name=".BookActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/book_details"/>
         <activity
             android:name=".SeeAllBooksActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/all_books"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

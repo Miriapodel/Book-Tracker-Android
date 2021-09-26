@@ -2,5 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.BackToWorkApp" parent="Theme.MaterialComponents.Light">
 
+        //<item name="android:windowAnimationStyle">@style/ShityCustomAnimation</item>
+
+    </style>
+
+    <style name="ShityCustomAnimation" parent="android:style/Animation">
+
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_in</item>
+
     </style>
 </resources>
