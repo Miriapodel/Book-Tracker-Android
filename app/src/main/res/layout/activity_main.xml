@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#fdf4e6">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Epic Library"
+        android:textColor="#90887b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <Button
+        android:id="@+id/seeAll"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="See All Books"
+        android:textColor="#90887b"
+        android:backgroundTint="#b6f2f3"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        />
+
+    <Button
+        android:id="@+id/currentlyReading"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="#90887b"
+        android:text="Currently Reading Books"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/seeAll"
+        app:layout_constraintStart_toStartOf="@+id/seeAll"
+        app:layout_constraintTop_toBottomOf="@+id/seeAll"
+        android:backgroundTint="#b6f2f3"/>
+
+    <Button
+        android:id="@+id/alreadyRead"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="#90887b"
+        android:text="Already Read Books"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/currentlyReading"
+        app:layout_constraintStart_toStartOf="@+id/currentlyReading"
+        app:layout_constraintTop_toBottomOf="@+id/currentlyReading"
+        android:backgroundTint="#b6f2f3"/>
+
+    <Button
+        android:id="@+id/wishlist"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Your Wishlist"
+        android:textColor="#90887b"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/alreadyRead"
+        app:layout_constraintStart_toStartOf="@+id/alreadyRead"
+        app:layout_constraintTop_toBottomOf="@+id/alreadyRead"
+        android:backgroundTint="#b6f2f3"/>
+
+    <Button
+        android:id="@+id/favorites"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Your Favorites Books"
+        android:textColor="#90887b"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/wishlist"
+        app:layout_constraintStart_toStartOf="@+id/wishlist"
+        app:layout_constraintTop_toBottomOf="@+id/wishlist"
+        android:backgroundTint="#b6f2f3"/>
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="ABOUT"
+        android:textColor="#90887b"
+        app:layout_constraintEnd_toEndOf="@+id/favorites"
+        app:layout_constraintStart_toStartOf="@+id/favorites"
+        app:layout_constraintTop_toBottomOf="@+id/favorites"
+        android:backgroundTint="#b6f2f3"/>
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Proudly made by King Miriapodel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#90887b"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

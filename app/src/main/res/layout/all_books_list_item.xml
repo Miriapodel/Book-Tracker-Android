@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp"
+    android:layout_margin="10dp"
+    android:backgroundTint="#90887b">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/condensedLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/bookCover"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_dark_background" />
+
+            <TextView
+                android:id="@+id/bookTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bookCover"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/yatra_one"
+                android:text="Book Name"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/downArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bookCover"
+                android:layout_alignEnd="@+id/bookCover"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_up_arrow" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/expandedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/condensedLayout"
+            android:layout_marginStart="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/averia_sans_libre"
+                android:text="Author:" />
+
+            <TextView
+                android:id="@+id/authorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/author"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/averia_sans_libre"
+                android:text="Author Name" />
+
+            <TextView
+                android:id="@+id/shortDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/authorName"
+                android:fontFamily="@font/averia_sans_libre"
+                android:text="Short Description" />
+
+            <ImageView
+                android:id="@+id/upArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_alignBottom="@+id/shortDescription"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_down_arrow" />
+
+           <TextView
+               android:id="@+id/deleteText"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Delete"
+               android:textColor="@color/red"
+               android:layout_below="@id/shortDescription"
+               android:visibility="gone"
+               android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
