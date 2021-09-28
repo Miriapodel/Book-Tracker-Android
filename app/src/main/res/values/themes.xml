@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.BackToWorkApp" parent="Theme.MaterialComponents.Light">
 
-        //<item name="android:windowAnimationStyle">@style/ShityCustomAnimation</item>
+<!--        <item name="android:windowAnimationStyle">@style/ShityCustomAnimation</item>-->
 
     </style>
 

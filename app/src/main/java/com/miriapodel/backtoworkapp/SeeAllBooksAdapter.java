@@ -95,6 +95,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                                 if(Utils.getInstance(context).removeFromCurrentlyReading(bookList.get(position)))
                                 {
                                     Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
+                                    bookList = Utils.getInstance(context).getCurrentlyReadingBooks();
                                     notifyDataSetChanged();
                                 }
                                 else
@@ -133,6 +134,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                                     if(Utils.getInstance(context).removeFromAlreadyRead(bookList.get(position)))
                                     {
                                         Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
+                                        bookList = Utils.getInstance(context).getAlreadyReadBooks();
                                         notifyDataSetChanged();
                                     }
                                     else
@@ -170,6 +172,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                                         if(Utils.getInstance(context).removeFromWishlist(bookList.get(position)))
                                         {
                                             Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
+                                            bookList = Utils.getInstance(context).getWishlistBooks();
                                             notifyDataSetChanged();
                                         }
                                         else
@@ -207,6 +210,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                                             if(Utils.getInstance(context).removeFromFavorites(bookList.get(position)))
                                             {
                                                 Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
+                                                bookList = Utils.getInstance(context).getFavoritesBooks();
                                                 notifyDataSetChanged();
                                             }
                                             else
