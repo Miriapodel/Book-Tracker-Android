@@ -1,5 +1,6 @@
 package com.miriapodel.backtoworkapp;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.appcompat.widget.WithHint;
@@ -29,8 +30,10 @@ public class Utils {
     private static ArrayList<Book> wishlistBooks;
     private static ArrayList<Book> favoritesBooks;
 
-    public Utils()
+    public Utils(Context context)
     {
+        sharedPreferences = context.getSharedPreferences("alternate_db", Context.MODE_PRIVATE);
+
         if(getAllBooks() == null)
         {
             addInitialData();
@@ -169,7 +172,7 @@ public class Utils {
 
     }
 
-    public static Utils getInstance()
+    public static Utils getInstance(Context context)
     {
 
         if(instance != null)
@@ -178,7 +181,7 @@ public class Utils {
         }
         else
         {
-            instance = new Utils();
+            instance = new Utils(context);
 
             return instance;
         }
@@ -290,22 +293,112 @@ public class Utils {
 
     public boolean removeFromCurrentlyReading(Book book)
     {
-        return currentlyReadingBooks.remove(book);
+        ArrayList<Book> books = getCurrentlyReadingBooks();
+
+        if(books!=null) {
+            for (Book b : books) {
+                if(b.getId() == book.getId())
+                {
+                    if(books.remove(book))
+                    {
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                        editor.remove(CURRENTLY_READING_KEY);
+                        editor.putString(CURRENTLY_READING_KEY, gson.toJson(books));
+                        editor.commit();
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     public boolean removeFromAlreadyRead(Book book)
     {
-        return alreadyReadBooks.remove(book);
+        ArrayList<Book> books = getAlreadyReadBooks();
+
+        if(books!=null)
+        {
+            for(Book b : books)
+            {
+                if(b.getId() == book.getId())
+                {
+                    if(books.remove(b))
+                    {
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                        editor.remove(ALREADY_READ_KEY);
+                        editor.putString(ALREADY_READ_KEY, gson.toJson(books));
+                        editor.commit();
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     public boolean removeFromWishlist(Book book)
     {
-        return wishlistBooks.remove(book);
+        ArrayList<Book> books = getWishlistBooks();
+
+        if(books != null)
+        {
+            for(Book b : books)
+            {
+                if(b.getId() == book.getId())
+                {
+                    if(books.remove(b))
+                    {
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                        editor.remove(WISHLIST);
+                        editor.putString(WISHLIST, gson.toJson(books));
+                        editor.commit();
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     public boolean removeFromFavorites(Book book)
     {
-        return favoritesBooks.remove(book);
+        ArrayList<Book> books = getFavoritesBooks();
+
+        if(books != null)
+        {
+            for(Book b : books)
+            {
+                if(b.getId() == book.getId())
+                {
+                    if(books.remove(b))
+                    {
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                        editor.remove(FAVORITES);
+                        editor.putString(FAVORITES, gson.toJson(books));
+                        editor.commit();
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
 }

@@ -37,7 +37,7 @@ public class BookActivity extends AppCompatActivity {
 
             if(bookId != -1)
             {
-                Book incomingBook = Utils.getInstance().getBookById(bookId);
+                Book incomingBook = Utils.getInstance(this).getBookById(bookId);
 
                 if(incomingBook != null)
                 {
@@ -89,7 +89,7 @@ public class BookActivity extends AppCompatActivity {
 
     private void handleCurrentlyReading(Book book)
     {
-        ArrayList<Book> currentlyReading = Utils.getInstance().getCurrentlyReadingBooks();
+        ArrayList<Book> currentlyReading = Utils.getInstance(this).getCurrentlyReadingBooks();
 
         boolean existsInCurrentlyReading = false;
 
@@ -106,7 +106,7 @@ public class BookActivity extends AppCompatActivity {
                 currentlyButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(Utils.getInstance().addToCurrentlyReading(book))
+                        if(Utils.getInstance(BookActivity.this).addToCurrentlyReading(book))
                         {
                             Intent intent = new Intent(BookActivity.this, CurrentlyReadingActivity.class);
                             startActivity(intent);
@@ -124,7 +124,7 @@ public class BookActivity extends AppCompatActivity {
 
     private void handleWantToRead(Book book)
     {
-        ArrayList<Book> wantToReadBooks = Utils.getWishlistBooks();
+        ArrayList<Book> wantToReadBooks = Utils.getInstance(this).getWishlistBooks();
 
         boolean existsInWantToReadBooks = false;
 
@@ -141,7 +141,7 @@ public class BookActivity extends AppCompatActivity {
                 wantToButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(Utils.getInstance().addToWishlistBooks(book))
+                        if(Utils.getInstance(BookActivity.this).addToWishlistBooks(book))
                         {
                             Intent intent = new Intent(BookActivity.this, wantToReadActivity.class);
                             startActivity(intent);
@@ -159,7 +159,7 @@ public class BookActivity extends AppCompatActivity {
 
     private void handleAlreadyRead(Book book)
     {
-        ArrayList<Book> alreadyReadBooks = Utils.getAlreadyReadBooks();
+        ArrayList<Book> alreadyReadBooks = Utils.getInstance(this).getAlreadyReadBooks();
 
         boolean existsInAlreadyReadBooks = false;
 
@@ -176,7 +176,7 @@ public class BookActivity extends AppCompatActivity {
                 alreadyButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(Utils.getInstance().addToAlreadyReadBooks(book))
+                        if(Utils.getInstance(BookActivity.this).addToAlreadyReadBooks(book))
                         {
                             Intent intent = new Intent(BookActivity.this, alreadyReadBooksActivity.class);
                             startActivity(intent);
@@ -194,7 +194,7 @@ public class BookActivity extends AppCompatActivity {
 
     private void handleFavorites(Book book)
     {
-        ArrayList<Book> favoriteBooks = Utils.getFavoritesBooks();
+        ArrayList<Book> favoriteBooks = Utils.getInstance(this).getFavoritesBooks();
 
         boolean existsInFavoriteBooks = false;
 
@@ -211,7 +211,7 @@ public class BookActivity extends AppCompatActivity {
                 addToButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(Utils.getInstance().addToFavoritesBooks(book))
+                        if(Utils.getInstance(BookActivity.this).addToFavoritesBooks(book))
                         {
                             Intent intent = new Intent(BookActivity.this, addToFavoritesActivity.class);
                             startActivity(intent);

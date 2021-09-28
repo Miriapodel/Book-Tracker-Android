@@ -27,7 +27,7 @@ public class wantToReadActivity extends AppCompatActivity {
 
         adapter = new SeeAllBooksAdapter(this, "wishlist");
 
-        adapter.setBookList(Utils.getInstance().getWishlistBooks());
+        adapter.setBookList(Utils.getInstance(this).getWishlistBooks());
 
         wantToReadRecView.setAdapter(adapter);
         wantToReadRecView.setLayoutManager(new LinearLayoutManager(this));

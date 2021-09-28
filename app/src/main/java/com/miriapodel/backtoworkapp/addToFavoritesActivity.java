@@ -27,7 +27,7 @@ public class addToFavoritesActivity extends AppCompatActivity {
 
         adapter = new SeeAllBooksAdapter(this, "favorites");
 
-        adapter.setBookList(Utils.getInstance().getFavoritesBooks());
+        adapter.setBookList(Utils.getInstance(this).getFavoritesBooks());
 
         addToFavoritesActivityRecView.setAdapter(adapter);
         addToFavoritesActivityRecView.setLayoutManager(new LinearLayoutManager(this));

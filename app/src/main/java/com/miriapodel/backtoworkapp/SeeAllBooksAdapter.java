@@ -92,7 +92,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
 
-                                if(Utils.getInstance().removeFromCurrentlyReading(bookList.get(position)))
+                                if(Utils.getInstance(context).removeFromCurrentlyReading(bookList.get(position)))
                                 {
                                     Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
                                     notifyDataSetChanged();
@@ -130,7 +130,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    if(Utils.getInstance().removeFromAlreadyRead(bookList.get(position)))
+                                    if(Utils.getInstance(context).removeFromAlreadyRead(bookList.get(position)))
                                     {
                                         Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
                                         notifyDataSetChanged();
@@ -167,7 +167,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-                                        if(Utils.getInstance().removeFromWishlist(bookList.get(position)))
+                                        if(Utils.getInstance(context).removeFromWishlist(bookList.get(position)))
                                         {
                                             Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
                                             notifyDataSetChanged();
@@ -204,7 +204,7 @@ public class SeeAllBooksAdapter extends RecyclerView.Adapter<SeeAllBooksAdapter.
                                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
-                                            if(Utils.getInstance().removeFromFavorites(bookList.get(position)))
+                                            if(Utils.getInstance(context).removeFromFavorites(bookList.get(position)))
                                             {
                                                 Toast.makeText(context, "Book removed", Toast.LENGTH_SHORT).show();
                                                 notifyDataSetChanged();

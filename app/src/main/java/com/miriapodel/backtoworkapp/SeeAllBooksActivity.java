@@ -35,7 +35,7 @@ public class SeeAllBooksActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        adapter.setBookList(Utils.getInstance().getAllBooks());
+        adapter.setBookList(Utils.getInstance(this).getAllBooks());
 
         allBooksList.setAdapter(adapter);
         allBooksList.setLayoutManager(new LinearLayoutManager(this));
